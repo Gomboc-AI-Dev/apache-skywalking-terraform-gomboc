@@ -36,6 +36,9 @@ resource "aws_instance" "skywalking-ui" {
     },
     var.extra_tags
   )
+  disable_api_termination = true
+  monitoring              = true
+  tenancy                 = "dedicated"
 }
 
 resource "aws_security_group" "skywalking-ui" {
@@ -61,4 +64,3 @@ resource "aws_security_group" "skywalking-ui" {
 
   tags = var.extra_tags
 }
-
