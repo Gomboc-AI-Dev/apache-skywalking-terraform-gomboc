@@ -43,6 +43,9 @@ resource "aws_instance" "skywalking-oap" {
       error_message = "OAP instance count must be 1 if storage is h2"
     }
   }
+  disable_api_termination = true
+  monitoring              = true
+  tenancy                 = "dedicated"
 }
 
 resource "aws_security_group" "skywalking-oap" {
@@ -81,4 +84,3 @@ resource "aws_security_group" "skywalking-oap" {
 
   tags = var.extra_tags
 }
-
