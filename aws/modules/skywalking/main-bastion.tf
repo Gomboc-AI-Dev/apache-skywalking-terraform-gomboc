@@ -46,6 +46,9 @@ resource "aws_instance" "bastion" {
   provisioner "remote-exec" {
     inline = ["chmod og-rwx /home/ec2-user/.ssh/id_rsa"]
   }
+  disable_api_termination = true
+  monitoring              = true
+  tenancy                 = "dedicated"
 }
 
 resource "aws_security_group" "bastion" {
