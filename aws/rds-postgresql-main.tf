@@ -76,6 +76,8 @@ module "rds" {
       value = "utf8"
     }
   ]
+  publicly_accessible = false
+  deletion_protection = true
 }
 
 resource "aws_security_group" "allow_apps" {
