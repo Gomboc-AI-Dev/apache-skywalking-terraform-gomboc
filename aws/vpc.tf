@@ -31,4 +31,5 @@ module "vpc" {
   single_nat_gateway   = true
   enable_dns_hostnames = true
   enable_dns_support   = true
+  enable_flow_log      = true
 }
